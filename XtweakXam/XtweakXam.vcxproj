@@ -285,6 +285,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="xex.xml" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HUD.h" />

@@ -403,7 +403,7 @@ BOOL Initialize(HANDLE hModule){
 	Mount("\\Device\\Mass0", "\\System??\\Mass0:");
 	Mount("\\Device\\Mass1", "\\System??\\Mass1:");
 	Mount("\\Device\\Mass2", "\\System??\\Mass2:");
-
+	Mount("\\Device\\Flash", "\\System??\\sfcx:");
 	Mount("\\SystemRoot", "\\System??\\Root:");
 
 	// EXPANSION!
@@ -415,6 +415,7 @@ BOOL Initialize(HANDLE hModule){
 	if(reader->ParseError() < 0) reader = new INIReader("Mass1:\\rgloader.ini");
 	if(reader->ParseError() < 0) reader = new INIReader("Mass2:\\rgloader.ini");
 	if(reader->ParseError() < 0) reader= new INIReader("Hdd:\\rgloader.ini");
+	if(reader->ParseError() < 0) reader= new INIReader("sfcx:\\rgloader.ini");
 
 	if(reader->ParseError() < 0) {
 		printf("ERROR: Unable to open ini file!\r\n");
@@ -519,7 +520,7 @@ BOOL Initialize(HANDLE hModule){
 
 	if(fExpansionEnabled)
 	{
-		bool ret = loadKV("Mass0:\\rgkv.bin");
+		BOOL ret = loadKV("Mass0:\\rgkv.bin");
 		if(!ret) ret = loadKV("Mass1:\\rgkv.bin");
 		if(!ret) ret = loadKV("Mass2:\\rgkv.bin");
 		if(!ret) ret = loadKV("Hdd:\\rgkv.bin");

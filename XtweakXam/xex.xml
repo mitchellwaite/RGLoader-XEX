@@ -13,10 +13,8 @@
 <version major="2" minor="0" build="21250" qfe="0"/>
      
 <mediatypes>
-	<harddisk/>
+  <allpackages/>
 </mediatypes>
-     
-<boundpath path="\Device\Harddisk0\Partition1\XtweakXam.xex"/>
-     
+ 
 <baseaddr addr="0x91800000"/>
 </xex>
